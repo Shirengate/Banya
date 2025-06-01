@@ -5,12 +5,13 @@
 }
 
 // vars
-$title-font: "Avenir Light";
-$text-font: "Barlow";
+$title-font: "Avenir Light", sans-serif;
+$text-font: "Barlow", sans-serif;
 $orange-color: #ec662b;
 $gray-color: #f5f4f2;
 $dark-olive-color: #4c5e5e;
 $olive-color: #6f7537;
+$peach-color: #fbf2e1;
 
 // breakpoints
 $mobile: 768px;
@@ -54,5 +55,18 @@ $mobile: 768px;
   }
   &:hover::after {
     width: 100%;
+  }
+}
+
+@mixin button-settings {
+  background-color: $orange-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: darken($orange-color, 10%);
   }
 }

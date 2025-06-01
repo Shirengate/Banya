@@ -1,5 +1,8 @@
 @use "./_vars" as *;
 
+* {
+  scroll-behavior: smooth;
+}
 .wrapper {
   .dark-layer {
     position: fixed;
@@ -11,6 +14,22 @@
     background: rgba(0, 0, 0, 0);
     z-index: -1;
   }
+  .fullscreenn-photo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: lightgray;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    &.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
   .header {
     @include wrapper-setting;
     background-color: #fcf2e1;
@@ -20,7 +39,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
+      padding: 0 20px;
       .header__logo {
         cursor: pointer;
         img {
@@ -86,7 +105,6 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        font-family: $text-font;
 
         @include mobile {
           flex-direction: column;
@@ -97,19 +115,263 @@
 
       .header__item {
         cursor: pointer;
-        .header__phone {
-          font-size: 18px;
-          color: black;
-          margin: 0;
-          @include link-slider;
-        }
         .header__link {
-          text-decoration: none;
-          color: black;
-          font-weight: lighter;
-          font-size: 18px;
           @include link-slider;
+          text-decoration: none;
+          font-family: $text-font;
+          font-weight: 500;
+          color: black;
+          font-size: 18px;
         }
+      }
+    }
+  }
+  .banner {
+    @include wrapper-setting;
+    &__banner {
+      background-image: url("/assets/imgs/banner.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 500px;
+      position: relative;
+      z-index: 2;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+      }
+      @media (max-width: 768px) {
+        height: 100dvh;
+      }
+    }
+    &__content {
+      @include content-setting;
+      font-family: $title-font;
+      font-size: 20px;
+      font-weight: lighter;
+      color: white;
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 20px;
+      z-index: 10;
+      h3 {
+        font-size: 19px;
+        font-weight: lighter;
+        line-height: 34px;
+        font-family: $text-font;
+        font-weight: 200;
+        color: white;
+        letter-spacing: 0.05em;
+      }
+      h1 {
+        font-size: 60px;
+        line-height: normal;
+        font-weight: 400;
+        font-weight: 300;
+      }
+      button {
+        @include button-settings;
+        font-size: 20px;
+      }
+      @media (max-width: 768px) {
+        justify-content: center;
+        h1 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+  .about {
+    @include wrapper-setting;
+    background-color: $gray-color;
+    margin-top: -80px;
+    position: relative;
+    z-index: 3;
+    padding: 80px 0;
+    border-radius: 40px 40px 0 0;
+
+    &__content {
+      @include content-setting;
+      text-align: center;
+
+      h2 {
+        font-family: $title-font;
+        font-size: 42px;
+        margin-bottom: 25px;
+        color: $dark-olive-color;
+        font-weight: 300;
+      }
+    }
+
+    &__description {
+      font-family: $text-font;
+      font-size: 20px;
+      color: $dark-olive-color;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    &__features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 0 20px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    &__feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      h4 {
+        font-family: $title-font;
+        font-size: 26px;
+        color: $dark-olive-color;
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-family: $text-font;
+        font-size: 17px;
+        color: $dark-olive-color;
+        line-height: 1.5;
+        font-weight: 300;
+        max-width: 280px;
+      }
+    }
+
+    &__icon {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      color: $orange-color;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .products {
+    @include wrapper-setting;
+    background-color: $peach-color;
+    padding: 100px 0;
+
+    &__content {
+      @include content-setting;
+
+      h2 {
+        font-family: $title-font;
+        font-size: 42px;
+        text-align: center;
+        color: $dark-olive-color;
+        font-weight: 300;
+        margin-bottom: 25px;
+      }
+    }
+
+    &__description {
+      font-family: $text-font;
+      font-size: 20px;
+      color: $dark-olive-color;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    &__showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &__main {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-color: #e0e0e0;
+      border-radius: 20px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &__info {
+      h3 {
+        font-family: $title-font;
+        font-size: 32px;
+        color: $dark-olive-color;
+        margin-bottom: 20px;
+        font-weight: 300;
+      }
+
+      p {
+        font-family: $text-font;
+        font-size: 18px;
+        color: $dark-olive-color;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        font-weight: 300;
+      }
+    }
+
+    &__features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-family: $text-font;
+        font-size: 17px;
+        color: $dark-olive-color;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba($dark-olive-color, 0.1);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &__gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
+
+      .products__image {
+        aspect-ratio: 16/9;
       }
     }
   }
