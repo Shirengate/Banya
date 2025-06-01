@@ -87,6 +87,10 @@
   margin: 5px 0;
   transition: 0.3s all ease;
 }
+.wrapper .header__nav .burger-menu.active {
+  position: fixed;
+  right: 20px;
+}
 .wrapper .header__nav .burger-menu.active .burger-menu__line:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
