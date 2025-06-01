@@ -2,5 +2,148 @@
   font-family: "Avenir Light";
   src: url("/assets/fonts/Avenir-Light.ttf");
 }
+.wrapper .dark-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0);
+}
+.wrapper .header {
+  width: 100%;
+  height: 100%;
+  background-color: #fcf2e1;
+  position: relative;
+}
+.wrapper .header__nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.wrapper .header__nav .header__logo {
+  cursor: pointer;
+}
+.wrapper .header__nav .header__logo img {
+  width: 100px;
+}
+.wrapper .header__nav .burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 11;
+}
+@media (max-width: 768px) {
+  .wrapper .header__nav .burger-menu {
+    display: block;
+  }
+}
+.wrapper .header__nav .burger-menu__line {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 5px 0;
+  transition: 0.3s all ease;
+}
+.wrapper .header__nav .burger-menu.active .burger-menu__line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.wrapper .header__nav .burger-menu.active .burger-menu__line:nth-child(2) {
+  opacity: 0;
+}
+.wrapper .header__nav .burger-menu.active .burger-menu__line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+@media (max-width: 768px) {
+  .wrapper .header__nav .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #fcf2e1;
+    padding: 80px 20px 20px;
+    transition: 0.3s right ease;
+    z-index: 10;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .header__nav .mobile-menu.active {
+    right: 0;
+  }
+}
+.wrapper .header__nav .header__list {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow";
+}
+@media (max-width: 768px) {
+  .wrapper .header__nav .header__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+.wrapper .header__nav .header__item {
+  cursor: pointer;
+}
+.wrapper .header__nav .header__item .header__phone {
+  font-size: 18px;
+  color: black;
+  margin: 0;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+.wrapper .header__nav .header__item .header__phone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  color: black;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.wrapper .header__nav .header__item .header__phone:hover::after {
+  width: 100%;
+}
+.wrapper .header__nav .header__item .header__link {
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+.wrapper .header__nav .header__item .header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  color: black;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.wrapper .header__nav .header__item .header__link:hover::after {
+  width: 100%;
+}
 
 /*# sourceMappingURL=main.css.map */

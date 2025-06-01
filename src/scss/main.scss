@@ -1,1 +1,115 @@
 @use "./_vars" as *;
+
+.wrapper {
+  .dark-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0);
+  }
+  .header {
+    @include wrapper-setting;
+    background-color: #fcf2e1;
+    position: relative;
+    &__nav {
+      @include content-setting;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      .header__logo {
+        cursor: pointer;
+        img {
+          width: 100px;
+        }
+      }
+      .burger-menu {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 11;
+
+        @include mobile {
+          display: block;
+        }
+        &__line {
+          display: block;
+          width: 25px;
+          height: 2px;
+          background-color: black;
+          margin: 5px 0;
+          transition: 0.3s all ease;
+        }
+        &.active {
+          .burger-menu__line {
+            &:nth-child(1) {
+              transform: rotate(45deg) translate(5px, 5px);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: rotate(-45deg) translate(5px, -5px);
+            }
+          }
+        }
+      }
+      .mobile-menu {
+        @include mobile {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background-color: #fcf2e1;
+          padding: 80px 20px 20px;
+          transition: 0.3s right ease;
+          z-index: 10;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+          &.active {
+            right: 0;
+          }
+        }
+      }
+      .header__list {
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-family: $text-font;
+
+        @include mobile {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+      }
+
+      .header__item {
+        cursor: pointer;
+        .header__phone {
+          font-size: 18px;
+          color: black;
+          margin: 0;
+          @include link-slider;
+        }
+        .header__link {
+          text-decoration: none;
+          color: black;
+          font-weight: lighter;
+          font-size: 18px;
+          @include link-slider;
+        }
+      }
+    }
+  }
+}
