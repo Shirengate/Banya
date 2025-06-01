@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerBtn.classList.toggle("active");
     mobileMenu.classList.toggle("active");
     body.style.overflow = body.style.overflow === "hidden" ? "" : "hidden";
+    darkLayer.style.zIndex = darkLayer.style.zIndex === "10" ? "-1" : "10";
     darkLayer.style.backgroundColor =
       darkLayer.style.backgroundColor === "rgba(0, 0, 0, 0.2)"
         ? "rgba(0, 0, 0, 0)"
@@ -22,10 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu.classList.remove("active");
       burgerBtn.classList.remove("active");
       body.style.overflow = "";
-      darkLayer.style.backgroundColor =
-        darkLayer.style.backgroundColor === "rgba(0, 0, 0, 0.2)"
-          ? "rgba(0, 0, 0, 0)"
-          : "rgba(0, 0, 0, 0.2)";
+      darkLayer.style.backgroundColor = "rgba(0, 0, 0, 0)";
+      darkLayer.style.zIndex = "-1";
     }
   });
 });

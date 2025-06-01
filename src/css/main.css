@@ -10,6 +10,7 @@
   height: 100%;
   transition: all 0.3s ease;
   background: rgba(0, 0, 0, 0);
+  z-index: -1;
 }
 .wrapper .header {
   width: 100%;
@@ -38,7 +39,7 @@
   border: none;
   cursor: pointer;
   padding: 5px;
-  z-index: 11;
+  z-index: 101;
 }
 @media (max-width: 768px) {
   .wrapper .header__nav .burger-menu {
@@ -73,7 +74,7 @@
     background-color: #fcf2e1;
     padding: 80px 20px 20px;
     transition: 0.3s right ease;
-    z-index: 10;
+    z-index: 100;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   }
   .wrapper .header__nav .mobile-menu.active {
