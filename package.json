@@ -1,0 +1,25 @@
+{
+  "name": "banya",
+  "version": "1.0.0",
+  "description": "- HTML\r - SCSS\r - Vite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch src/scss:src/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shirengate/Banya.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shirengate/Banya/issues"
+  },
+  "homepage": "https://github.com/Shirengate/Banya#readme",
+  "devDependencies": {
+    "sass": "^1.89.1"
+  }
+}

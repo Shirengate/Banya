@@ -1,0 +1,30 @@
+/// fonts
+@font-face {
+  font-family: "Avenir Light";
+  src: url("/assets/fonts/Avenir-Light.ttf");
+}
+
+// vars
+$title-font: "Avenir Light";
+$text-font: "Barlow";
+$orange-color: #ec662b;
+$gray-color: #f5f4f2;
+$dark-olive-color: #4c5e5e;
+$olive-color: #6f7537;
+
+// mixins
+@mixin wrapper-setting {
+  width: 100%;
+  height: 100%;
+}
+@mixin content-setting {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@mixin flex-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
