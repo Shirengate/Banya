@@ -29,6 +29,17 @@
     &.active {
       transform: translate(-50%, -50%) scale(1);
     }
+    .close-photo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      color: black;
+    }
+    @media (max-width: 1200px) {
+      width: 90%;
+      height: 40%;
+    }
   }
   .header {
     @include wrapper-setting;
@@ -315,10 +326,10 @@
     &__image {
       width: 100%;
       aspect-ratio: 4/3;
+      cursor: pointer;
       background-color: #e0e0e0;
       border-radius: 20px;
       transition: transform 0.3s ease;
-
       &:hover {
         transform: scale(1.02);
       }

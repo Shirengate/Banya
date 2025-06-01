@@ -35,10 +35,10 @@
                 <a href="#about" class="header__link">О нас</a>
               </li>
               <li class="header__item">
-                <a href="#" class="header__link">Продукция</a>
+                <a href="#products" class="header__link">Продукция</a>
               </li>
               <li class="header__item">
-                <a href="#" class="header__link">Контакты</a>
+                <a href="#contacts" class="header__link">Контакты</a>
               </li>
               <li class="header__item">
                 <a
@@ -57,7 +57,7 @@
           <div class="banner__content">
             <h3>ЗНАКОМЬТЕСЬ С НАШИМИ САУНАМИ</h3>
             <h1>Все для вашего комфорта и здоровья</h1>
-            <button>Смотреть сауны</button>
+            <button class="banner__button">Смотреть сауны</button>
           </div>
         </div>
       </main>
@@ -143,7 +143,7 @@
           </p>
           <div class="products__showcase">
             <div class="products__main">
-              <div class="products__image"></div>
+              <div class="products__image" tabindex="0"></div>
               <div class="products__info">
                 <h3>Баня PREMIUM</h3>
                 <p>
@@ -158,15 +158,29 @@
               </div>
             </div>
             <div class="products__gallery">
-              <div class="products__image"></div>
-              <div class="products__image"></div>
-              <div class="products__image"></div>
+              <div class="products__image" tabindex="0"></div>
+              <div class="products__image" tabindex="0"></div>
+              <div class="products__image" tabindex="0"></div>
             </div>
           </div>
         </div>
       </div>
       <div class="dark-layer"></div>
-      <div class="fullscreenn-photo"></div>
+      <div class="fullscreenn-photo">
+        <svg
+          tabindex="0"
+          class="close-photo"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="m8.4 16.308l3.6-3.6l3.6 3.6l.708-.708l-3.6-3.6l3.6-3.6l-.708-.708l-3.6 3.6l-3.6-3.6l-.708.708l3.6 3.6l-3.6 3.6zM12.003 21q-1.866 0-3.51-.708q-1.643-.709-2.859-1.924t-1.925-2.856T3 12.003t.709-3.51Q4.417 6.85 5.63 5.634t2.857-1.925T11.997 3t3.51.709q1.643.708 2.859 1.922t1.925 2.857t.709 3.509t-.708 3.51t-1.924 2.859t-2.856 1.925t-3.509.709"
+          />
+        </svg>
+      </div>
     </div>
     <script src="/src/js/index.js"></script>
   </body>
